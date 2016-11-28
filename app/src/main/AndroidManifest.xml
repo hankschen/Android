@@ -19,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".DeleteActivity" />
+        <activity android:name=".Add" />
+        <activity android:name=".UpdateActivity" />
     </application>
 
 </manifest>
