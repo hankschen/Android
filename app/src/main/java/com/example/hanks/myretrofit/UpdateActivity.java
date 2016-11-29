@@ -9,12 +9,16 @@ import android.widget.EditText;
 
 public class UpdateActivity extends AppCompatActivity {
     EditText etName,etSex,etBirthday,etEmail,etPhone,etAddress;
+    Intent intent;
+    private int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
         findviews();
+        intent = getIntent();
+        position = (int) intent.getExtras().getSerializable("項目");
         setData();
     }
 
@@ -28,8 +32,6 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     public void onUpdate(View view){
-        //Intent intent = new Intent();
-        Intent intent = getIntent();
         intent.putExtra("name", etName.getText().toString());
         intent.putExtra("sex", etSex.getText().toString());
         intent.putExtra("birthday", etBirthday.getText().toString());
@@ -45,14 +47,11 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     public void onCancel(View view){
-        Intent intent = getIntent();
         setResult(Activity.RESULT_CANCELED, intent);
         finish();
     }
 
     void setData(){
-        Intent intent = getIntent();
-        int position = (int) intent.getExtras().getSerializable("項目");
         MyApp myApp = (MyApp) getApplicationContext();
         Repo repo = myApp.result.get(position);
         etName.setText(repo.cName);

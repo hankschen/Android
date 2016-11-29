@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView)findViewById(R.id.listView);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        //adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        adapter = new ArrayAdapter<String>(this,R.layout.myview);
+
         listView.setAdapter(adapter);
 
         //Delete data
@@ -59,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         Retrofit retrofit = new Retrofit.Builder()
 //                .baseUrl("https://api.github.com/")
                 .baseUrl("http://192.168.137.53:8081/PHP_Project_forXAMPP/11-14_projectForAll/")
-                //.baseUrl("http://127.0.0.1:80/PHP_Project_forXAMPP/11-14_projectForAll/")
+                //.baseUrl("http://192.168.1.2:8081/PHP_Project_forXAMPP/11-14_projectForAll/") // for A305-1
+                //.baseUrl("http://127.0.0.1:80/PHP_Project_forXAMPP/11-14_projectForAll/") // for studentroom
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         MyApp myApp = (MyApp) getApplicationContext();
@@ -170,9 +173,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"資料未修改..",Toast.LENGTH_SHORT).show();
                 }
                 if(resultCode == Activity.RESULT_OK){
+                    final int position = (int) data.getExtras().getSerializable("項目");
                     MyApp myApp = (MyApp) getApplicationContext();
                     Repo repo = new Repo();
-                    repo.cID = 11;
+                    //repo.cID = data.getIntExtra("項目", position);
+                    repo.cID = myApp.result.get(position).cID;
                     repo.cName = data.getStringExtra("name");
                     repo.cSex = data.getStringExtra("sex");
                     repo.cBirthday = data.getStringExtra("birthday");
