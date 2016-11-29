@@ -137,13 +137,12 @@ public class MainActivity extends AppCompatActivity {
                 if (resultCode == Activity.RESULT_OK) {
                     MyApp myApp = (MyApp) getApplicationContext();
                     Repo repo = new Repo();
-                    Intent intent = getIntent();
-                    repo.cName = intent.getStringExtra("name");
-                    repo.cSex = intent.getStringExtra("sex");
-                    repo.cBirthday = intent.getStringExtra("birthday");
-                    repo.cEmail = intent.getStringExtra("email");
-                    repo.cPhone = intent.getStringExtra("phone");
-                    repo.cAddr = intent.getStringExtra("address");
+                    repo.cName = data.getStringExtra("name");
+                    repo.cSex = data.getStringExtra("sex");
+                    repo.cBirthday = data.getStringExtra("birthday");
+                    repo.cEmail = data.getStringExtra("email");
+                    repo.cPhone = data.getStringExtra("phone");
+                    repo.cAddr = data.getStringExtra("address");
 //                    repo.cName = "Hanks";
 //                    repo.cName = intent.getStringExtra("name");
 //                    repo.cSex = "M";
@@ -173,13 +172,12 @@ public class MainActivity extends AppCompatActivity {
                 if(resultCode == Activity.RESULT_OK){
                     MyApp myApp = (MyApp) getApplicationContext();
                     Repo repo = new Repo();
-                    Intent intent = getIntent();
-                    repo.cName = intent.getStringExtra("name");
-                    repo.cSex = intent.getStringExtra("sex");
-                    repo.cBirthday = intent.getStringExtra("birthday");
-                    repo.cEmail = intent.getStringExtra("email");
-                    repo.cPhone = intent.getStringExtra("phone");
-                    repo.cAddr = intent.getStringExtra("address");
+                    repo.cName = data.getStringExtra("name");
+                    repo.cSex = data.getStringExtra("sex");
+                    repo.cBirthday = data.getStringExtra("birthday");
+                    repo.cEmail = data.getStringExtra("email");
+                    repo.cPhone = data.getStringExtra("phone");
+                    repo.cAddr = data.getStringExtra("address");
                     myApp.update = myApp.service.update(repo.cName,repo.cSex,repo.cBirthday,repo.cEmail,repo.cPhone,repo.cAddr);
                     myApp.update.enqueue(new Callback<ResponseBody>() {
                         @Override

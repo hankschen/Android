@@ -20,6 +20,7 @@ public interface GitHubService {
     Call<List<Repo>> listRepos();
     //Call<List<Repo>> listRepos(@Path("user") String user);
 
+    //Delete data
     @GET("api/api_delete.php")
     Call<ResponseBody> delete(@Query("cID") String cID);
 
@@ -29,6 +30,7 @@ public interface GitHubService {
 //    @POST("api/api_add_post.php")
 //    Call<ResponseBody> addByPlainText(@Body RequestBody body);
 
+    //Add data
     @FormUrlEncoded
     @POST("api/api_add_post.php")
     Call<ResponseBody> addByFormPost(@Field("cName") String cName,
@@ -38,6 +40,7 @@ public interface GitHubService {
                                      @Field("cPhone") String cPhone,
                                      @Field("cAddr") String cAddr);
 
+    //Update data
     @FormUrlEncoded
     @POST("api/api_update_post.php")
     Call<ResponseBody> update(@Field("cName") String cName,

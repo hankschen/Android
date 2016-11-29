@@ -27,7 +27,8 @@ public class Add extends AppCompatActivity {
     }
 
     public void onAdd(View view){
-        Intent result = new Intent();
+        //Intent result = new Intent();
+        Intent result = getIntent();
         result.putExtra("name", etName.getText().toString());
         result.putExtra("sex", etSex.getText().toString());
         result.putExtra("birthday", etBirthday.getText().toString());
