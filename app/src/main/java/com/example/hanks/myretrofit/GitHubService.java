@@ -40,7 +40,7 @@ public interface GitHubService {
                                      @Field("cPhone") String cPhone,
                                      @Field("cAddr") String cAddr);
 
-    //Update data
+    //Update data 方法一
     @GET("api/api_update_get.php")
     Call<ResponseBody> updateByGet(@Query("cID") int cID,
                                    @Query("cName") String cName,
@@ -49,4 +49,13 @@ public interface GitHubService {
                                    @Query("cEmail") String cEmail,
                                    @Query("cPhone") String cPhone,
                                    @Query("cAddr") String cAddr);
+    //Update data 方法二
+//    @POST("api/api_update_get.php")
+//    Call<ResponseBody> updateByGet(@Field("cID") int cID,
+//                                   @Field("cName") String cName,
+//                                   @Field("cSex") String cSex,
+//                                   @Field("cBirthday") String cBirthday,
+//                                   @Field("cEmail") String cEmail,
+//                                   @Field("cPhone") String cPhone,
+//                                   @Field("cAddr") String cAddr);
 }
