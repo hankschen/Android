@@ -172,14 +172,15 @@ public class MainActivity extends AppCompatActivity {
                 if(resultCode == Activity.RESULT_OK){
                     MyApp myApp = (MyApp) getApplicationContext();
                     Repo repo = new Repo();
+                    repo.cID = 11;
                     repo.cName = data.getStringExtra("name");
                     repo.cSex = data.getStringExtra("sex");
                     repo.cBirthday = data.getStringExtra("birthday");
                     repo.cEmail = data.getStringExtra("email");
                     repo.cPhone = data.getStringExtra("phone");
                     repo.cAddr = data.getStringExtra("address");
-                    myApp.update = myApp.service.update(repo.cName,repo.cSex,repo.cBirthday,repo.cEmail,repo.cPhone,repo.cAddr);
-                    myApp.update.enqueue(new Callback<ResponseBody>() {
+                    myApp.updateByGet = myApp.service.updateByGet(repo.cID,repo.cName,repo.cSex,repo.cBirthday,repo.cEmail,repo.cPhone,repo.cAddr);
+                    myApp.updateByGet.enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                             Toast.makeText(MainActivity.this, "資料修改ok!", Toast.LENGTH_SHORT).show();

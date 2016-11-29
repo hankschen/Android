@@ -41,12 +41,12 @@ public interface GitHubService {
                                      @Field("cAddr") String cAddr);
 
     //Update data
-    @FormUrlEncoded
-    @POST("api/api_update_post.php")
-    Call<ResponseBody> update(@Field("cName") String cName,
-                                     @Field("cSex") String cSex,
-                                     @Field("cBirthday") String cBirthday,
-                                     @Field("cEmail") String cEmail,
-                                     @Field("cPhone") String cPhone,
-                                     @Field("cAddr") String cAddr);
+    @GET("api/api_update_get.php")
+    Call<ResponseBody> updateByGet(@Query("cID") int cID,
+                                   @Query("cName") String cName,
+                                   @Query("cSex") String cSex,
+                                   @Query("cBirthday") String cBirthday,
+                                   @Query("cEmail") String cEmail,
+                                   @Query("cPhone") String cPhone,
+                                   @Query("cAddr") String cAddr);
 }

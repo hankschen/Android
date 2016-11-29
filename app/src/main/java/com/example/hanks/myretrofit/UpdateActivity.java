@@ -2,9 +2,8 @@ package com.example.hanks.myretrofit;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.view.ViewPropertyAnimatorCompatSet;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
@@ -29,7 +28,8 @@ public class UpdateActivity extends AppCompatActivity {
     }
 
     public void onUpdate(View view){
-        Intent intent = new Intent();
+        //Intent intent = new Intent();
+        Intent intent = getIntent();
         intent.putExtra("name", etName.getText().toString());
         intent.putExtra("sex", etSex.getText().toString());
         intent.putExtra("birthday", etBirthday.getText().toString());

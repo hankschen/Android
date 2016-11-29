@@ -18,5 +18,5 @@ public class MyApp extends Application{
     //    Call<ResponseBody> add;
 //    Call<ResponseBody> addByPlainText;
     Call<ResponseBody> addByFormPost;
-    Call<ResponseBody> update;
+    Call<ResponseBody> updateByGet;
 }

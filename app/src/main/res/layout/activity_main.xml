@@ -35,23 +35,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_weight="2"
+        android:orientation="vertical">
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button"
             android:text="新增"
-            android:onClick="onAdd"
-            android:layout_weight="3"/>
+            android:onClick="onAdd"/>
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:text="ItemClick to Delete data.\nItemLongClick to Update data."
-            android:textColor="#fff"
-            android:background="#00f"/>
+            android:text="Item_Click to Delete data.\nItem_Long_Click to Update data."
+            android:background="#000"
+            android:textColor="#fff"/>
 
     </LinearLayout>
 
